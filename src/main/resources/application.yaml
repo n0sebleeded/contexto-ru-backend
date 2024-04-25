@@ -1,0 +1,17 @@
+spring:
+  config:
+    #Need to use env file in properties
+    import: optional:file:.env[.properties]
+  #DB options
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: ru-contexto-backend
